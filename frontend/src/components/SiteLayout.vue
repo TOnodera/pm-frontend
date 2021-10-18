@@ -1,13 +1,10 @@
 <template>
     <div class="site-layout">
-        <header class="p-text-left">
-            <h1 class="title">Project Manager</h1>
-        </header>
+        <header class="p-text-left"><h1>Project Manager</h1></header>
         <main>
             <sidebar></sidebar>
-            <div></div>
         </main>
-        <footer class="p-text-center">2021 copyright @takeshi.</footer>
+        <footer>2021 copyright @takeshi.</footer>
     </div>
 </template>
 
@@ -24,18 +21,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-$header_height: 50px;
-$title_size: 20px;
-
 .site-layout {
     color: var(--text-color);
     header {
         background-color: var(--primary-color);
-        height: $header_height;
-        .title {
-            font-size: $title_size;
-            padding: ($header_height - $title_size) / 2;
-        }
+        height: 50px;
     }
     main {
         min-height: 100vh;

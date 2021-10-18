@@ -1,12 +1,15 @@
 <template>
     <div class="site-layout">
-        <header class="p-text-left">
-            <h1 class="title">Project Manager</h1>
+        <header>
+            <h1 class="title p-text-bold">
+                <i
+                    class="pi pi-bars p-mr-1 p-d-inline-block hamberger"
+                    @click="toggleSidebar"
+                />Project Manager
+            </h1>
         </header>
-        <main>
-            <sidebar></sidebar>
-            <div></div>
-        </main>
+        <main></main>
+        <sidebar v-model:visible="visibleSidebar" />
         <footer class="p-text-center">2021 copyright @takeshi.</footer>
     </div>
 </template>
@@ -19,6 +22,16 @@ export default defineComponent({
     name: 'SiteLayout',
     components: {
         Sidebar,
+    },
+    data() {
+        return {
+            visibleSidebar: false,
+        };
+    },
+    methods: {
+        toggleSidebar() {
+            this.visibleSidebar = !this.visibleSidebar;
+        },
     },
 });
 </script>
@@ -35,6 +48,9 @@ $title_size: 20px;
         .title {
             font-size: $title_size;
             padding: ($header_height - $title_size) / 2;
+            .hamberger:hover {
+                cursor: pointer;
+            }
         }
     }
     main {

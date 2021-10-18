@@ -6,14 +6,32 @@
 	// Sets the run context to one level up instead of the .devcontainer folder.
 	"context": "..",
 
+	"workspaceFolder": "/home/node/app",
+
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	"dockerFile": "../Dockerfile",
 
 	// Set *default* container specific settings.json values on container create.
-	"settings": {},
+	"settings": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"editor.formatOnSave": true
+	},
 	
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [],
+	"extensions": [
+		"hollowtree.vue-snippets",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"jcbuisson.vue",
+		"abusaidm.html-snippets",
+		"vscode-icons-team.vscode-icons"
+	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

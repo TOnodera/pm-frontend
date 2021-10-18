@@ -8,7 +8,13 @@
                 />Project Manager
             </h1>
         </header>
-        <main></main>
+        <main>
+            <content-wrapper>
+                <template #content>
+                    <router-view />
+                </template>
+            </content-wrapper>
+        </main>
         <sidebar v-model:visible="visibleSidebar" />
         <footer class="p-text-center">2021 copyright @takeshi.</footer>
     </div>
@@ -17,11 +23,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Sidebar from 'primevue/sidebar';
+import ContentWrapper from '@/components/ContentWrapper.vue';
 
 export default defineComponent({
     name: 'SiteLayout',
     components: {
         Sidebar,
+        ContentWrapper,
     },
     data() {
         return {

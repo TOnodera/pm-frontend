@@ -1,28 +1,27 @@
 <template>
-    <div>
-        <div class="p-grid p-mb-3">
-            <h2 class="p-col-6">プロジェクト一覧</h2>
-            <div class="p-col-6 p-text-right"><i class="pi pi-plus" /></div>
-        </div>
-
-        <DataTable :value="products" responsiveLayout="scroll">
-            <Column field="code" header="Code"></Column>
-            <Column field="name" header="Name"></Column>
-            <Column field="category" header="Category"></Column>
-            <Column field="quantity" header="Quantity"></Column>
-        </DataTable>
-    </div>
+    <project-layout title="プロジェクト一覧">
+        <template #card-content>
+            <DataTable :value="products" responsiveLayout="scroll">
+                <Column field="code" header="Code"></Column>
+                <Column field="name" header="Name"></Column>
+                <Column field="category" header="Category"></Column>
+                <Column field="quantity" header="Quantity"></Column>
+            </DataTable>
+        </template>
+    </project-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import ProjectLayout from './ProjectLayout.vue';
 
 export default defineComponent({
     components: {
         DataTable,
         Column,
+        ProjectLayout,
     },
     data() {
         return {

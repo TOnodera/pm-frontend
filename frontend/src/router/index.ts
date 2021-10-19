@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Projects from '../views/projects/Index.vue';
+import ProjectsIndex from '../views/projects/Index.vue';
+import ProjectCreate from '../views/projects/Create.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/projects',
-        name: 'Projects',
-        component: Projects,
+        name: 'ProjectsIndex',
+        component: ProjectsIndex,
+    },
+    {
+        path: '/projects/create',
+        name: 'ProjectCreate',
+        component: ProjectCreate,
     },
 ];
 
